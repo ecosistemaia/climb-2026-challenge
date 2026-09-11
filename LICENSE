@@ -19,3 +19,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+NOTE — third-party code with its own license:
+
+`climb-medai/Thirdparty/mamba/` vendors `mamba_ssm` (state-spaces/mamba), by
+Tri Dao and Albert Gu, licensed under the Apache License 2.0. See
+`climb-medai/Thirdparty/mamba/LICENSE` for the full text.
