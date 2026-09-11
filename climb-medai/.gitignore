@@ -1,0 +1,13 @@
+# Weights are baked into the image at build time (see Dockerfile), not
+# committed. They're fetched from their source paths by
+# scripts/fetch_weights.sh before `docker build`.
+weights/*.pth
+weights/**/*.pth
+weights/**/*.pt
+
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local dev/test scratch, not part of the submission tree.
+/output/
