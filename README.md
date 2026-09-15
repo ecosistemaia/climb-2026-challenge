@@ -1,10 +1,12 @@
-# climb-2026-challenge
+# CLiMB 2026: Colonoscopy Localization and Mapping Benchmark
 
 Submission of team **MedAI** (Innovation Center for Medicine and Artificial Intelligence) to the [CLiMB 2026 Challenge](https://www.synapse.org/Synapse:syn74370700/wiki/), a monocular visual odometry task for colonoscopy video.
 
 ## Method
 
 Depth is estimated with SfSNet (EfficientNet-B0 encoder + lightweight decoder, with a temporal Mamba block for consistency across frames), optical flow with RAFT-Small, and per-frame camera pose is recovered by lifting flow correspondences to 3D via depth and solving PnP inside RANSAC — no bundle adjustment, loop closure, or map fusion.
+
+![The MedAI pipeline for monocular visual odometry. Dense optical-flow correspondences are lifted to 3D using predicted depth and used to estimate camera motion with PnP within RANSAC. (A) SfSNet with a temporal Mamba-2 block predicts per-frame depth while maintaining a hidden state across frames. (B) RAFT-Small estimates dense optical flow for the frame pair. (C) Kannala–Brandt rectification, EPnP + RANSAC, and clamp and chaining estimate the per-frame pose from the depth/flow correspondences. (D) The submap state machine groups these poses into trajectory segments.](imgs/pipeline3.png)
 
 ## Data
 
